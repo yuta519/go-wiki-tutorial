@@ -47,14 +47,7 @@ func getTitle(w http.ResponseWriter, r *http.Request) (string, error) {
 	return m[2], nil
 }
 
-// func makeHandler(fn func(http.ResponseWriter, *http.Request, string)) http.HandlerFunc{
-// 	return func(w http.ResponseWriter, r *http.Request) {
-// 		m := validPath.FirstStringSubmatch()
-// 	}
-// }
-
 func viewHandler(w http.ResponseWriter, r *http.Request) {
-	// title := r.URL.Path[len("/view/"):]
 	title, err := getTitle(w, r)
 	if err != nil {
 		return
@@ -68,7 +61,6 @@ func viewHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func editHandler(w http.ResponseWriter, r *http.Request) {
-	// title := r.URL.Path[len("/edit/"):]
 	title, err := getTitle(w, r)
 	if err != nil {
 		return
@@ -81,7 +73,6 @@ func editHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func saveHandler(w http.ResponseWriter, r *http.Request) {
-	// title := r.URL.Path[len("/save/"):]
 	title, err := getTitle(w, r)
 	if err != nil {
 		return
